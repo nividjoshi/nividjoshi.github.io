@@ -1,0 +1,210 @@
+/* ======== SETUP & VARIABLES ======== */
+:root {
+    --bg-color: #FAF8F1; /* Warm, parchment-like beige */
+    --text-color: #4E4B42; /* Dark, warm slate/brown */
+    --primary-accent: #3A6B35; /* Rich, earthy green */
+    --secondary-accent: #A3B18A; /* Light, sage green */
+    --heading-font: 'Montserrat', sans-serif;
+    --body-font: 'Lora', serif;
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+h1, h2, h3 {
+    font-family: var(--heading-font);
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--primary-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-accent);
+}
+
+/* ======== HEADER & NAVIGATION ======== */
+header {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--heading-font);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.logo:hover {
+    color: var(--primary-accent);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    font-family: var(--heading-font);
+    font-weight: 400;
+    color: var(--text-color);
+    padding-bottom: 5px;
+}
+
+nav ul li a.active, nav ul li a:hover {
+    color: var(--primary-accent);
+    border-bottom: 2px solid var(--primary-accent);
+}
+
+/* ======== HERO SECTION ======== */
+#hero {
+    /* 
+       IMPORTANT: Replace this URL with a real image! 
+       Search "agriculture sunrise" or "field sunrise" on Unsplash.com for great, free options.
+       This one is from photographer Dan Meyers on Unsplash.
+    */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=1974');
+    background-size: cover;
+    background-position: center;
+    min-height: 85vh; /* Takes up 85% of the viewport height */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content .subtitle {
+    font-family: var(--body-font);
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 1rem auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-accent);
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-family: var(--heading-font);
+    font-weight: 700;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: var(--secondary-accent);
+    color: var(--text-color);
+}
+
+/* ======== INTRO & PILLARS SECTIONS ======== */
+#intro, #pillars {
+    padding: 5rem 0;
+    text-align: center;
+}
+
+#intro h2 {
+    font-size: 2.5rem;
+}
+
+#intro p {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1rem;
+}
+
+.pillars-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.pillar-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    flex-basis: 30%; /* Each card takes up about 30% of the container */
+    text-align: left;
+}
+
+/* ======== FOOTER ======== */
+footer {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+/* ======== RESPONSIVE DESIGN ======== */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    nav {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .pillars-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .pillar-card {
+        width: 100%;
+        max-width: 400px;
+    }
+}
