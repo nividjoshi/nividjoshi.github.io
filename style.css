@@ -52,9 +52,10 @@ a:hover {
 
 /* ======== HEADER & NAVIGATION ======== */
 header {
-    background: #fff;
+    /* CHANGE #1: Header background now matches the page for a seamless logo look */
+    background: var(--bg-color);
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    padding: 1rem 0;
+    padding: 0.5rem 0; /* Adjusted padding for a slightly shorter nav bar */
     position: sticky;
     top: 0;
     z-index: 10;
@@ -66,34 +67,23 @@ nav {
     align-items: center;
 }
 
-/* ======== Updated Logo Styles ======== */
+/* ======== CORRECTED Logo Styles ======== */
 
-/* This styles the link (the container for the image and text) */
+/* This styles the link (the container for your logo image) */
 .logo {
-    display: flex;         /* Lays out the image and text side-by-side */
-    align-items: center;   /* Vertically aligns them in the middle */
-    gap: 0.75rem;          /* Creates a nice space between the image and text */
-    
-    font-family: var(--heading-font);
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-color);
+    display: flex;
+    align-items: center; /* This helps vertically center the logo */
 }
 
-/* This styles the image itself */
+/* This styles the logo image itself */
 .logo img {
-    width: 45px;            /* Sets the width of the logo frame */
-    height: 45px;           /* Sets the height of the logo frame */
-    border-radius: 50%;     /* This is the magic that creates the circle! */
-    object-fit: cover;      /* Prevents your image from being stretched or squished */
-    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Adds a subtle, professional shadow */
+    /* CHANGE #2: Styles for a rectangular logo, NOT a circle */
+    height: 50px;           /* Sets the height of your logo in the nav bar */
+    width: auto;            /* Lets the width adjust automatically to prevent stretching */
+    /* All circle-related styles like border-radius have been removed. */
 }
 
-/* The existing hover effect still works perfectly! */
-.logo:hover {
-    color: var(--primary-accent);
-}
-
+/* Navigation Links */
 nav ul {
     list-style: none;
     display: flex;
@@ -114,15 +104,11 @@ nav ul li a.active, nav ul li a:hover {
 
 /* ======== HERO SECTION ======== */
 #hero {
-    /* 
-       IMPORTANT: Replace this URL with a real image! 
-       Search "agriculture sunrise" or "field sunrise" on Unsplash.com for great, free options.
-       This one is from photographer Dan Meyers on Unsplash.
-    */
+    /* This URL should be a landscape photo, NOT your logo */
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=1974');
     background-size: cover;
     background-position: center;
-    min-height: 85vh; /* Takes up 85% of the viewport height */
+    min-height: 85vh;
     
     display: flex;
     justify-content: center;
@@ -191,7 +177,7 @@ nav ul li a.active, nav ul li a:hover {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.07);
-    flex-basis: 30%; /* Each card takes up about 30% of the container */
+    flex-basis: 30%;
     text-align: left;
 }
 
