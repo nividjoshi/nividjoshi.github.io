@@ -66,13 +66,30 @@ nav {
     align-items: center;
 }
 
+/* ======== Updated Logo Styles ======== */
+
+/* This styles the link (the container for the image and text) */
 .logo {
+    display: flex;         /* Lays out the image and text side-by-side */
+    align-items: center;   /* Vertically aligns them in the middle */
+    gap: 0.75rem;          /* Creates a nice space between the image and text */
+    
     font-family: var(--heading-font);
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--text-color);
 }
 
+/* This styles the image itself */
+.logo img {
+    width: 45px;            /* Sets the width of the logo frame */
+    height: 45px;           /* Sets the height of the logo frame */
+    border-radius: 50%;     /* This is the magic that creates the circle! */
+    object-fit: cover;      /* Prevents your image from being stretched or squished */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Adds a subtle, professional shadow */
+}
+
+/* The existing hover effect still works perfectly! */
 .logo:hover {
     color: var(--primary-accent);
 }
